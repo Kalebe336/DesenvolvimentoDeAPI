@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.filme {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px auto;
+    width: 300px;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #2484df;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #218838;
+}
