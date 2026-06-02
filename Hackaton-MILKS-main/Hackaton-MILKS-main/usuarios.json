@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1779998228763,
+    "nome": "isabella wentz",
+    "email": "wentzisa11@gmail.com",
+    "senha": "$2b$10$EcE.B3XkqyKvUwm.5YpfqOra39ABuEsbxnVPo.pWjwYYF626rXYdq",
+    "idade": 20,
+    "exames": [],
+    "nutricao": [],
+    "sono": []
+  },
+  {
+    "id": 1780426518483,
+    "nome": "kalebe kramer",
+    "email": "kalebekramer336@gmail.com",
+    "senha": "$2b$10$254MMSmbBbt.IfwvtCqmiutPX7lcK44MNaGHO8KNhU9lD37Pm2R/O",
+    "idade": 18,
+    "exames": [],
+    "nutricao": [
+      {
+        "alimento": "arroz",
+        "carbo": 10,
+        "proteina": 10,
+        "data": "02/06/2026"
+      }
+    ],
+    "sono": [],
+    "favoritos": {
+      "exames": []
+    }
+  }
+]
