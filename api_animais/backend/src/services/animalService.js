@@ -1,0 +1,13 @@
+import animalRepository from "../repositories/animalRepository.js";
+
+export const animalService = {
+    async getAllAnimais() {
+        return await animalRepository.findAll();
+    },
+    async createAnimal(animalRequisicao){
+        if (animalRequisicao.idade<0){
+            throw new Error('A idade do animaltem que ser maior do que 0')
+        }
+        return await animalRepository.create(animalRequisicao);
+    }
+}
