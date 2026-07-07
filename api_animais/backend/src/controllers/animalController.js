@@ -22,8 +22,10 @@ export const animalController ={
     async update(req, res){
         try{
             const animalAtualizado = await animalService.updateAnimal(req.params.id, req.body);
+            res.json(animalAtualizado);
         }catch (error){
-            
+            const status = error.message === "Animal não encontrado" ? 404 : 400;
+            res.status(status).json({error: error.message})
         }
     }
 }

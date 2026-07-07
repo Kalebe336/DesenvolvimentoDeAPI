@@ -9,5 +9,14 @@ export const animalService = {
             throw new Error('A idade do animaltem que ser maior do que 0')
         }
         return await animalRepository.create(animalRequisicao);
+    },
+
+    async updateAnimal(id, animalRequisicao){
+        const animalExistente = await animalRespository.findById(id);
+        if(!animalExistente){
+            throw new Error('Animal não encontrado');
+
+            return await animalRepository.update(id, animalRequisicao);
+        }
     }
 }
