@@ -23,5 +23,23 @@ export const animalRepository = {
         const sql ='UPDATE animal SET nome = $1, especie = $2, idade = $3, status_saude = $4 RETURNING *;';
         const res = await query(sql, [nome, especie, idade, status_saude, id]);
         return res.rows[0];
+    },
+
+    async patch(id, animal){
+        const {nome, especie, idade, status_saude} = animal;
+        const sql =`
+        UPDATE animal 
+        SET nome = COALESCE($1, nome),
+        especie = COALESCE($2, especie), 
+        idade = COALESCE($3, idade), 
+        status_saude = COALESCE($4, status_saude) 
+        WHERE id = $5 RETURNING *;';`
+        const res = await query(sql, 
+        [nome || null, 
+        especie || null, 
+        idade || null, 
+        status_saude || null, 
+        id]);
+        return res.rows[0];
     }
 }

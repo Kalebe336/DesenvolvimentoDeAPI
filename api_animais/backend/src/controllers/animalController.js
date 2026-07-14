@@ -36,5 +36,17 @@ export const animalController ={
             const status = error.message === "Animal não encontrado" ? 404 : 400;
             res.status(status).json({error: error.message})
         }
+    },
+
+    async delete(req, res){
+        try{
+            const animalRemovido = await animalService.deleteAnimal(req.params.id);
+            res.json({
+                message: `Animal removido com sucesso do Zoo : ${animalRemovido.nome}`,
+            });
+        }catch (error){
+          const status = error.message === "Animal não encontrado" ? 404 : 400;
+            res.status(status).json({error: error.message})
+        }
     }
 }
