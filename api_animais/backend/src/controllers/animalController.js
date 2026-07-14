@@ -10,6 +10,15 @@ export const animalController ={
         }
     },
 
+    async get(req, res){
+        try {
+            const animal = await animalService.getAnimal(req.params.id);
+            res.json(animal);
+        }catch (error){
+            res.status(404).json({error: error.message})
+        }
+    },
+
     async create(req, res){
         try {
             const novAnimal = await animalService.createAnimal(req.body);
